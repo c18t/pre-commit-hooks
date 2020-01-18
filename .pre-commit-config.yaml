@@ -17,4 +17,5 @@ repos:
         entry: hooks/yamllint.py
         language: python
         types: [file, yaml]
+        args: [--encoding, UTF-8]
         additional_dependencies: [yamllint]

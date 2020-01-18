@@ -6,6 +6,12 @@ import sys
 
 
 def run():
+    argv = sys.argv
+    index_encoding = argv.index('--encoding') if '--encoding' in argv else -1
+    if index_encoding != -1:
+        os.environ['PYTHONIOENCODING'] = argv[index_encoding+1]
+        del argv[index_encoding:index_encoding+2]
+
     yamllint_exe = 'yamllint'
 
     if 'PATHEXT' in os.environ:
@@ -25,7 +31,7 @@ def run():
     files = []
     args = []
 
-    for x in sys.argv[1:]:
+    for x in argv[1:]:
         if os.path.isfile(x):
             files += [x]
         else:
