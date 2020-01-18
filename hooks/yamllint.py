@@ -27,16 +27,16 @@ def run():
 
     for x in sys.argv[1:]:
         if os.path.isfile(x):
-            files += [f"\"{x}\""]
+            files += [x]
         else:
-            args += [x]
+            args += [f"\"{x}\""]
 
     args = ' '.join(args)
 
     for f in files:
-        subprocess.call(f"echo {f}")
+        subprocess.call(['echo', f])
         sys.exit(subprocess.call(
-            f"{yamllint_exe} - {args} < {f}", shell=True))
+            f"{yamllint_exe} - {args} < \"{f}\"", shell=True))
 
 
 if __name__ == '__main__':
