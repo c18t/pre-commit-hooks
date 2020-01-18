@@ -10,7 +10,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 - repo: https://github.com/c18t/pre-commit-hooks
-  rev: v1.0.0 # Use the ref you want to point at
+  rev: v1.1.2 # Use the ref you want to point at
   hooks:
     - id: shellcheck
     # - id: ...
@@ -19,4 +19,4 @@ Add this to your `.pre-commit-config.yaml`
 ## Hooks available
 
 - `shellcheck` - Run shellcheck against scripts.
-- `yamllint` - Run yamllint aggainst YAML files.
+- `yamllint` - Run yamllint against YAML files.
