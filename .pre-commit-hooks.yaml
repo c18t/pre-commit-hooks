@@ -1,8 +1,16 @@
 ---
 - id: shellcheck
-  name: Test shell scripts with shellcheck
-  description: Shell scripts conform to shellcheck
+  name: shellcheck
+  description: Test shell scripts with shellcheck
   entry: shellcheck
   language: system
   types: [shell]
   args: [-e, SC1091]
+
+- id: yamllint
+  name: yamllint
+  description: Test YAML files with yamllint
+  entry: hooks/yamllint.py
+  language: python
+  types: [file, yaml]
+  additional_dependencies: [yamllint]

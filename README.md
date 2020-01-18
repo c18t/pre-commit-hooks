@@ -19,3 +19,4 @@ Add this to your `.pre-commit-config.yaml`
 ## Hooks available
 
 - `shellcheck` - Run shellcheck against scripts.
+- `yamllint` - Run yamllint aggainst YAML files.
