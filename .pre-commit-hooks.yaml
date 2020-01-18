@@ -10,7 +10,7 @@
 - id: yamllint
   name: yamllint
   description: Test YAML files with yamllint
-  entry: hooks/yamllint.py
+  entry: run_yamllint
   language: python
   types: [file, yaml]
   additional_dependencies: [yamllint]

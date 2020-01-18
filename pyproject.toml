@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "c18t-pre-commit-hooks"
+version = "1.1.0"
+description = "my hooks for pre-commit"
+authors = ["ɯtʲi <u@chimata.org>"]
+license = "MIT"
+repository = "https://github.com/c18t/pre-commit-hooks"
+packages = [
+  { include = "hooks" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+run_yamllint = 'hooks.yamllint:run'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
