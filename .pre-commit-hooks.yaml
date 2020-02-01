@@ -15,3 +15,10 @@
   types: [file, yaml]
   args: [--encoding, UTF-8]
   additional_dependencies: [yamllint]
+
+- id: hadolint
+  name: hadolint
+  description: Test Dockerfile with hadolint
+  entry: hadolint
+  language: system
+  types: [dockerfile]
