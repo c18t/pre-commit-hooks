@@ -1,13 +1,11 @@
 [tool.poetry]
 name = "c18t-pre-commit-hooks"
-version = "1.1.0"
+version = "1.3.0"
 description = "my hooks for pre-commit"
-authors = ["ɯtʲi <u@chimata.org>"]
+authors = ["ɯtʲi <info@c18t.me>"]
 license = "MIT"
 repository = "https://github.com/c18t/pre-commit-hooks"
-packages = [
-  { include = "hooks" }
-]
+packages = [{ include = "hooks" }]
 
 [tool.poetry.dependencies]
 python = "^3.6"

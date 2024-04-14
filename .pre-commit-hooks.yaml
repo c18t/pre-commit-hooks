@@ -16,9 +16,12 @@
   args: [--encoding, UTF-8]
   additional_dependencies: [yamllint]
 
-- id: hadolint
-  name: hadolint
-  description: Test Dockerfile with hadolint
-  entry: hadolint
-  language: system
-  types: [dockerfile]
+- id: pretty-quick
+  name: pretty-quick
+  description: Format changed files in the repository
+  entry: pretty-quick
+  language: node
+  types: [text]
+  args: [--staged]
+  require_serial: true
+  additional_dependencies: [prettier, pretty-quick]

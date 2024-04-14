@@ -1,5 +1,16 @@
 ---
 repos:
+  - repo: local
+    hooks:
+      - id: pretty-quick
+        name: pretty-quick
+        entry: pretty-quick
+        language: node
+        types: [text]
+        args: [--staged]
+        require_serial: true
+        additional_dependencies: [prettier, pretty-quick]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.4.0
     hooks:
