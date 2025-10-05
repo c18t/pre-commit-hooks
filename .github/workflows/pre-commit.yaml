@@ -1,0 +1,31 @@
+---
+name: pre-commit
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: setup go
+        uses: actions/setup-go@v5
+      - name: setup python
+        uses: actions/setup-python@v5
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: install node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+      - name: install actionlint
+        run: go install github.com/rhysd/actionlint/cmd/actionlint@latest
+      - name: install pretty-quick and dependencies
+        run: pnpm install
+      - name: run pre-commit
+        uses: pre-commit/action@v3.0.1

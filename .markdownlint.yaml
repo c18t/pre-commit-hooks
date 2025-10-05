@@ -1,0 +1,5 @@
+---
+default: true
+MD013:
+  code_block_line_length: 999
+MD014: false

@@ -1,15 +1,24 @@
 {
   "name": "pre-commit-hooks",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "my hooks for pre-commit",
   "main": "index.js",
+  "packageManager": "pnpm@10.18.0",
+  "engines": {
+    "node": "*",
+    "pnpm": "*",
+    "npm": "⚠️use pnpm instead",
+    "yarn": "⚠️use pnpm instead"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ɯ̹t͡ɕʲi <info@c18t.me>",
   "license": "MIT",
-  "dependencies": {
-    "prettier": "*",
-    "pretty-quick": "*"
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-sh": "^0.18.0",
+    "prettier-plugin-toml": "^2.0.6",
+    "pretty-quick": "^4.2.2"
   }
 }

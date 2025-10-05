@@ -10,7 +10,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 - repo: https://github.com/c18t/pre-commit-hooks
-  rev: v1.3.0 # Use the ref you want to point at
+  rev: v1.3.1 # Use the ref you want to point at
   hooks:
     - id: shellcheck
     # - id: ...

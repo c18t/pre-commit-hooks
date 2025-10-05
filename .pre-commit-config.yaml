@@ -1,5 +1,17 @@
 ---
+exclude: ^.github/pull_request_template.md$
+
 repos:
+  - repo: local
+    hooks:
+      - id: yamllint
+        name: yamllint
+        entry: hooks/yamllint.py
+        language: python
+        types: [file, yaml]
+        args: [--encoding, UTF-8]
+        additional_dependencies: [yamllint]
+
   - repo: local
     hooks:
       - id: pretty-quick
@@ -11,22 +23,17 @@ repos:
         require_serial: true
         additional_dependencies: [prettier, pretty-quick]
 
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.4.0
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.18.1
+    hooks:
+      - id: markdownlint-cli2
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: '7.3.0'
     hooks:
       - id: flake8
 
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.21.0
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.7
     hooks:
-      - id: markdownlint
-
-  - repo: local
-    hooks:
-      - id: yamllint
-        name: yamllint
-        entry: hooks/yamllint.py
-        language: python
-        types: [file, yaml]
-        args: [--encoding, UTF-8]
-        additional_dependencies: [yamllint]
+      - id: actionlint-system

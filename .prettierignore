@@ -1,0 +1,7 @@
+*.py
+
+.editorconfig
+.flake8
+.npmrc
+pnpm-lock.yaml
+LICENSE

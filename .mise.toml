@@ -1,0 +1,25 @@
+[tools]
+python = "3.9"
+poetry = "latest"
+pre-commit = "latest"
+yamllint = "latest"
+markdownlint-cli2 = "latest"
+node = "latest"
+pnpm = "latest"
+
+[env]
+'_'.file = ".env"
+
+[tasks.setup]
+description = "Setup project"
+depends = ["setup:mise"]
+run = "mise run setup:pre-commit"
+
+[tasks."setup:mise"]
+description = "Setup project mise"
+run = "mise install -y"
+
+[tasks."setup:pre-commit"]
+description = "Setup project pre-commit"
+depends = ["setup:mise"]
+run = "pre-commit install"
